@@ -1,0 +1,65 @@
+export default function CampusConnect() {
+const cards = [
+{
+title: "Class Schedules",
+subtitle: "What time is the introductory physics lecture today?",
+img: "https://via.placeholder.com/80x80.png?text=CS",
+},
+{
+title: "Campus Facilities",
+subtitle: "Where is the main computer lab located?",
+img: "https://via.placeholder.com/80x80.png?text=CF",
+},
+{
+title: "Dining Options",
+subtitle: "What’s on the menu at the main dining hall for dinner?",
+img: "https://via.placeholder.com/80x80.png?text=DO",
+},
+{
+title: "Library Help",
+subtitle: "How can I reserve a study room in the library?",
+img: "https://via.placeholder.com/80x80.png?text=LH",
+},
+{
+title: "Campus Events",
+subtitle: "What events are happening on campus this week?",
+img: "https://via.placeholder.com/80x80.png?text=CE",
+},
+{
+title: "Sports & Recreation",
+subtitle: "What are the hours for the campus gym?",
+img: "https://via.placeholder.com/80x80.png?text=SR",
+},
+];
+
+
+return (
+<div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6">
+<h1 className="text-3xl font-bold text-blue-800">CampusConnect AI</h1>
+<p className="text-gray-600 mt-2 mb-8">Your AI-powered campus guide</p>
+
+
+<p className="text-gray-700 mb-6">Or try one of these suggestions:</p>
+
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl w-full">
+{cards.map((card, i) => (
+<div
+key={i}
+className="flex items-center p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition cursor-pointer"
+>
+<img
+src={card.img}
+alt={card.title}
+className="w-16 h-16 rounded-md object-cover mr-4"
+/>
+<div>
+<h2 className="font-semibold text-lg text-gray-900">{card.title}</h2>
+<p className="text-gray-600 text-sm">{card.subtitle}</p>
+</div>
+</div>
+))}
+</div>
+</div>
+);
+}
